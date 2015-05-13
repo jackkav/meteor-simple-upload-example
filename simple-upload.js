@@ -27,7 +27,6 @@ if (Meteor.isClient) {
       alert(file);
 var reader = new FileReader();
 
-Http.getElementsByTagName('')
 reader.readAsText(Images.findOne().url);
 alert(reader.String);
   //console.log(Images.findOne().this.url);
