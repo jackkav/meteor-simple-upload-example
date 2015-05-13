@@ -1,0 +1,26 @@
+<head>
+  <title>simple-upload</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+  {{output}}
+  {{> myForm}}
+  {{#each tasks}}
+  {{> task}}
+  {{/each}}
+
+</body>
+
+
+<template name="myForm">
+  <form method="post">
+    <input type="file" class="myFileInput" multiple />
+  </form>
+</template>
+
+
+<template name="task">
+<p><a href="{{this.url}}" >{{this.name}}</a></p>
+</template>
+
