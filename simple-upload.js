@@ -16,24 +16,24 @@ if (Meteor.isClient) {
   Template.body.helpers({
     tasks: function () {
       return Images.find();
-    },
-    output: function () {
+    }//,
+   // output: function () {
       // // var url = "/cfs/files/images/rcEdFXuhsEDatLPbH/test4.xml";
       // // console.log(Images.findOne())
       // var data =Images.findOne();
       // var text = reader.readAsText('http://localhost:3000/cfs/files/images/vY2TSaAxKSnSHoMSM/test4.xml','utf-8');
       //  console.log(text);
-       var file = 'http://localhost:3000/cfs/files/images/vY2TSaAxKSnSHoMSM/test4.xml';
-      alert(file);
-var reader = new FileReader();
+//        var file = 'http://localhost:3000/cfs/files/images/vY2TSaAxKSnSHoMSM/test4.xml';
+//       //alert(file);
+// var reader = new FileReader();
 
-reader.readAsText(Images.findOne().url);
-alert(reader.String);
-  //console.log(Images.findOne().this.url);
+// reader.readAsText(Images.findOne().url);
+// alert(reader.String);
+//   //console.log(Images.findOne().this.url);
 //var text = 'test';//= reader.readAsText(Images.findOne().url,'utf-8');
 
-      return text;
-    }
+      //return text;
+  //  }
   });
 
 }
