@@ -4,24 +4,28 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-  {{output}}
-  {{> myForm}}
-  {{#each tasks}}
-  {{> task}}
-  {{/each}}
+
+  {{> test}}
 
 </body>
+<template name="test">
+  {{> addPicture}}
+  {{#each posts}}
+  {{> onePicture}}
+  {{/each}}
 
-
-<template name="myForm">
-  <form method="post">
-    <input type="file" class="myFileInput" multiple />
-  </form>
 </template>
 
 
-<template name="task">
-<p><a href="{{this.url}}" >{{this.name}}</a></p>
-<img src="{{this.url}}" />
+<template name="onePicture">
+  <h1><a href="{{getImage this.picture}}">{{this.title}}</a></h1>
+  <img src="{{getImage this.picture}}" />
 </template>
 
+<template name="addPicture">
+  {{#autoForm id="testForm" collection="Posts" type="insert"}}
+  {{> afQuickField name="title"}}
+  {{> afQuickField name="picture"}}
+  <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>
